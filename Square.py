@@ -22,7 +22,7 @@ class Gene:
         char            = ColorString(char, f'{hex} r')
         self.char       = char      
         self.z          = z
-        self.image      = Image.open(f'./Images/{self.effects}_{self.type}.png') 
+        self.image      = Image.open(f'./Abstract/{self.effects}_{self.type}.png') 
 
     def __mul__(one, two):
         if one.effects == two.effects:
