@@ -11,8 +11,8 @@ os.chdir(os.path.dirname(__file__))
 from Config import * 
 
 
-print(PTop.visible)
-print(PSide.visible)
+print('Parent  Top:',  PTop.visible)
+print('Parent Side:', PSide.visible)
 
 Top  = PTop.face
 Side = PSide.face
@@ -37,18 +37,8 @@ for x in Top:
 
     Square.append(row)
 
-def table(Table):
-    Table = []
-    for each in Top:
-        row = [] #''
-        for item in each:
-            row.append(item)
-            # row += item
-        Table.append(row)
-    return Table
-
-TableTop  = table(Top)
-TableSide = table(Side)
+TableTop  = Top
+TableSide = Side
 
 
 combos = {}
@@ -70,7 +60,6 @@ TSquare.insert(0, TableTop)
 TSquare[0].insert(0, None)
 for x in range(len(TSquare)-1):
     TSquare[x+1].insert(0, TableSide[x])
-
 
 for u in range(len(TSquare)):
     for v in range(len(TSquare[u])):
@@ -118,7 +107,7 @@ def CompileChar(tile, size, compile = True):
 
 # tiles:
 width, height = 100, 100
-offset = (round(len(Top)*width/2), 0)
+offset = (round(len(Side)*width/2), 0)
 parTile = (offset[0], offset[0])
 
 ImageSquare = Image.new('RGBA', (len(Top)*width+offset[0], len(Side)*height))

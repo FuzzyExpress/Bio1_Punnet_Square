@@ -74,18 +74,25 @@ if UseCats:
     # PTop  = Parent([C, S, W, E, F, N], [c, s, w, e, f, n])
     # PSide = Parent([C, S, W, E, F, N], [c, s, w, e, f, n])
 
-    PTop  = Parent([C, W, E, F, N], [c, w, e, f, n])
-    PSide = Parent([C, W, E, F, N], [c, w, e, f, n])
+    # PTop  = Parent([C, W, E, F, N], [c, w, e, f, n])
+    # PSide = Parent([C, W, E, F, N], [c, w, e, f, n])
 
     # if you want to make a smaller square by dropping genes 
     #   with images need to make correct characters, you can 
     #   put the desired gene in the `extra` list.
     # redefining exiting variables overwrite previous ones.
+
     PTop  = Parent([C, W, E, F], [c, w, e, f])
     PSide = Parent([C, W, E, F], [c, w, e, f])
+
+    # PTop  = Parent([C, W, E, F], [C, W, E, F])
+    # PSide = Parent([c, w, e, f], [c, w, e, f])
+
     # PSide = Parent([c, w, e, f, n], [c, w, e, f, n])
 
+    extra = []
     extra = [N]
+
 
 # Example random parents generator
 RNG = False
